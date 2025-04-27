@@ -1,6 +1,6 @@
 resource "github_repository" "repository" {
   name        = local.repository
-  description = "Template Repository"
+  description = "A JSON-based intermediate markup language for component representation."
 
   has_downloads        = false
   has_discussions      = false
