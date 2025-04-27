@@ -18,7 +18,7 @@ resource "github_repository_ruleset" "branch_require_pr" {
   rules {
     required_status_checks {
       required_check {
-        context        = "Unit Test"
+        context        = "Build Test (TypeScript)"
         integration_id = data.github_app.github_actions.id
       }
     }
