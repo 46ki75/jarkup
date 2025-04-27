@@ -8,9 +8,9 @@
   "author": "Chomolungma Shirayuki",
   "repository": {
     "type": "git",
-    "url": "git@github.com:46ki75/elmethis.git"
+    "url": "git@github.com:46ki75/jarkup.git"
   },
-  "homepage": "https://46ki75.github.io/elmethis",
+  "homepage": "https://github.com/46ki75/jarkup",
   "files": [
     "dist"
   ],
