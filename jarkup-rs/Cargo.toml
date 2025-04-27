@@ -1,15 +1,15 @@
 [package]
-name = "elmethis-json-component-types"
-version = "0.3.2"
+name = "jarkup-rs"
+version = "0.1.0"
 edition = "2024"
-description = "Component JSON Schema"
+description = "A JSON-based intermediate markup language for component representation."
 authors = ["Chomolungma Shirayuki"]
-repository = "https://github.com/46ki75/elmethis-notion"
+repository = "https://github.com/46ki75/jarkup"
 license = "MIT"
-documentation = "https://docs.rs/elmethis-json-component-types"
+documentation = "https://docs.rs/jarkup"
 
 [dependencies]
-serde = { version = "1.0", features = ["derive"] }
+serde = { version = "^1.0", features = ["derive"] }
 
 [dev-dependencies]
 serde_json = "1.0.140"
