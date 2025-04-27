@@ -6,11 +6,12 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket       = "shared-46ki75-github-s3-bucket-terraform-tfstate"
-    key          = "jarkup/terraform.tfstate"
-    region       = "ap-northeast-1"
-    encrypt      = true
-    use_lockfile = true
+  cloud {
+    organization = "46ki75"
+    hostname     = "app.terraform.io"
+
+    workspaces {
+      name = "jarkup"
+    }
   }
 }
