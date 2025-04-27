@@ -21,6 +21,10 @@ resource "github_repository_ruleset" "branch_require_pr" {
         context        = "Build Test (TypeScript)"
         integration_id = data.github_app.github_actions.id
       }
+      required_check {
+        context        = "Build Test (Rust)"
+        integration_id = data.github_app.github_actions.id
+      }
     }
   }
 }
