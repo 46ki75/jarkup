@@ -1,4 +1,4 @@
-name: Unit Test
+name: Build Test
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  notionrs:
-    name: Unit Test
+  build-typescript:
+    name: Build Test (TypeScript)
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
@@ -17,5 +17,6 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Run Unit Test
-        run: (exit 0)
+      - name: Run Build
+        run: npm run build
+        working-directory: jarkup-ts
