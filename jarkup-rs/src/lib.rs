@@ -36,6 +36,9 @@ pub enum BlockComponent {
     Table(Table),
     TableRow(TableRow),
     TableCell(TableCell),
+    ColumnList(ColumnList),
+    Column(Column),
+    Unsupported(Unsupported),
 }
 
 // Text # -------------------------------------------------- #
@@ -578,3 +581,69 @@ pub struct TableCellSlots {
 }
 
 crate::to_block_component!(TableCell);
+
+// ColumnList # -------------------------------------------------- #
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct ColumnList {
+    pub inline: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub props: Option<ColumnListProps>,
+    pub slots: ColumnListSlots,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct ColumnListProps {}
+
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct ColumnListSlots {
+    pub default: Vec<Component>,
+}
+
+crate::to_block_component!(ColumnList);
+
+// Column # -------------------------------------------------- #
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct Column {
+    pub inline: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub props: Option<ColumnProps>,
+    pub slots: ColumnSlots,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct ColumnProps {}
+
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct ColumnSlots {
+    pub default: Vec<Component>,
+}
+
+crate::to_block_component!(Column);
+
+// Unsupported # -------------------------------------------------- #
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct Unsupported {
+    pub inline: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub props: Option<UnsupportedProps>,
+    pub slots: Option<UnsupportedSlots>,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct UnsupportedProps {
+    details: String,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct UnsupportedSlots {}
+
+crate::to_block_component!(Unsupported);
