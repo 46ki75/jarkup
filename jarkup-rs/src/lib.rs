@@ -464,7 +464,7 @@ crate::to_block_component!(Image);
 pub struct CodeBlock {
     pub inline: bool,
     pub props: CodeBlockProps,
-    pub slots: CodeBlockSlots,
+    pub slots: Option<CodeBlockSlots>,
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]

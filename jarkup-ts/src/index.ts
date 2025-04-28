@@ -181,7 +181,7 @@ export interface CodeBlock extends BlockComponentBase<"CodeBlock"> {
     code: string;
     language: string;
   };
-  slots: {
+  slots?: {
     default: InlineComponent[];
   };
 }
