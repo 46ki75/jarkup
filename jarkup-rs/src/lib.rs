@@ -1,4 +1,5 @@
 mod r#macro;
+mod skip_fn;
 
 use serde::{Deserialize, Serialize};
 
@@ -61,22 +62,22 @@ pub struct TextProps {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub background_color: Option<String>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
     pub bold: Option<bool>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
     pub italic: Option<bool>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
     pub underline: Option<bool>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
     pub strikethrough: Option<bool>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
     pub katex: Option<bool>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
     pub code: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
