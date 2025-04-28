@@ -639,7 +639,7 @@ pub struct Unsupported {
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct UnsupportedProps {
-    details: String,
+    pub details: String,
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
