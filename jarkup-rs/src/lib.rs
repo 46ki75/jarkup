@@ -39,6 +39,7 @@ pub enum BlockComponent {
 
 // Text # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Text {
     /// Always `true`
     pub inline: bool,
@@ -50,6 +51,7 @@ pub struct Text {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct TextProps {
     pub text: String,
 
@@ -88,12 +90,14 @@ pub struct TextProps {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct TextSlots;
 
 crate::to_inline_component!(Text);
 
 // Icon # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Icon {
     /// Always `true`
     pub inline: bool,
@@ -106,6 +110,7 @@ pub struct Icon {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct IconProps {
     pub src: String,
 
@@ -114,12 +119,14 @@ pub struct IconProps {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct IconSlots;
 
 crate::to_inline_component!(Icon);
 
 // Heading # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Heading {
     /// Always `false`
     pub inline: bool,
@@ -130,7 +137,7 @@ pub struct Heading {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
-#[serde(rename_all = "lowercase")]
+#[serde(rename_all = "camelCase")]
 #[serde(try_from = "u8", into = "u8")]
 pub enum HeadingLevel {
     #[default]
@@ -172,11 +179,13 @@ impl TryFrom<u8> for HeadingLevel {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct HeadingProps {
     pub level: HeadingLevel,
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct HeadingSlots {
     pub default: Vec<InlineComponent>,
 }
@@ -185,6 +194,7 @@ crate::to_block_component!(Heading);
 
 // Paragraph # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Paragraph {
     /// Always `false`
     pub inline: bool,
@@ -197,9 +207,11 @@ pub struct Paragraph {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ParagraphProps;
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ParagraphSlots {
     pub default: Vec<InlineComponent>,
 }
@@ -208,6 +220,7 @@ crate::to_block_component!(Paragraph);
 
 // ListItem # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ListItem {
     pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -216,9 +229,11 @@ pub struct ListItem {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ListItemProps;
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ListItemSlots {
     pub default: Vec<InlineComponent>,
 }
@@ -227,6 +242,7 @@ crate::to_block_component!(ListItem);
 
 // List # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct List {
     pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -235,13 +251,14 @@ pub struct List {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ListProps {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub list_style: Option<ListStyle>,
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
-#[serde(rename_all = "lowercase")]
+#[serde(rename_all = "camelCase")]
 pub enum ListStyle {
     #[default]
     Unordered,
@@ -249,6 +266,7 @@ pub enum ListStyle {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ListSlots {
     pub default: Vec<Component>,
 }
@@ -257,6 +275,7 @@ crate::to_block_component!(List);
 
 // BlockQuote # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct BlockQuote {
     pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -265,12 +284,14 @@ pub struct BlockQuote {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct BlockQuoteProps {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub cite: Option<String>,
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct BlockQuoteSlots {
     pub default: Vec<Component>,
 }
@@ -279,6 +300,7 @@ crate::to_block_component!(BlockQuote);
 
 // Callout # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Callout {
     pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -287,7 +309,7 @@ pub struct Callout {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
-#[serde(rename_all = "lowercase")]
+#[serde(rename_all = "camelCase")]
 pub enum CalloutType {
     #[default]
     Note,
@@ -298,12 +320,14 @@ pub enum CalloutType {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct CalloutProps {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub r#type: Option<CalloutType>,
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct CalloutSlots {
     pub default: Vec<Component>,
 }
@@ -312,6 +336,7 @@ crate::to_block_component!(Callout);
 
 // Divider # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Divider {
     pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -321,15 +346,18 @@ pub struct Divider {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct DividerProps;
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct DividerSlots;
 
 crate::to_block_component!(Divider);
 
 // Toggle # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Toggle {
     pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -338,9 +366,11 @@ pub struct Toggle {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ToggleProps;
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ToggleSlots {
     pub default: Vec<Component>,
     pub summary: Vec<InlineComponent>,
@@ -350,6 +380,7 @@ crate::to_block_component!(Toggle);
 
 // Bookmark # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Bookmark {
     pub inline: bool,
     pub props: BookmarkProps,
@@ -358,6 +389,7 @@ pub struct Bookmark {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct BookmarkProps {
     pub url: String,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -369,12 +401,14 @@ pub struct BookmarkProps {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct BookmarkSlots;
 
 crate::to_block_component!(Bookmark);
 
 // File # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct File {
     pub inline: bool,
     pub props: FileProps,
@@ -383,6 +417,7 @@ pub struct File {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct FileProps {
     pub src: String,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -390,12 +425,14 @@ pub struct FileProps {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct FileSlots;
 
 crate::to_block_component!(File);
 
 // Image # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Image {
     pub inline: bool,
     pub props: ImageProps,
@@ -404,6 +441,7 @@ pub struct Image {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ImageProps {
     pub src: String,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -411,12 +449,14 @@ pub struct ImageProps {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ImageSlots;
 
 crate::to_block_component!(Image);
 
 // CodeBlock # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct CodeBlock {
     pub inline: bool,
     pub props: CodeBlockProps,
@@ -424,12 +464,14 @@ pub struct CodeBlock {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct CodeBlockProps {
     pub code: String,
     pub language: String,
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct CodeBlockSlots {
     pub default: Vec<InlineComponent>,
 }
@@ -438,6 +480,7 @@ crate::to_block_component!(CodeBlock);
 
 // Katex # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Katex {
     pub inline: bool,
     pub props: KatexProps,
@@ -446,17 +489,20 @@ pub struct Katex {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct KatexProps {
     pub expression: String,
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct KatexSlots;
 
 crate::to_block_component!(Katex);
 
 // Table # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Table {
     pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -465,6 +511,7 @@ pub struct Table {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct TableProps {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub has_column_header: Option<bool>,
@@ -475,6 +522,7 @@ pub struct TableProps {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct TableSlots {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub header: Option<Vec<Component>>,
@@ -485,6 +533,7 @@ crate::to_block_component!(Table);
 
 // TableRow # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct TableRow {
     pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -493,9 +542,11 @@ pub struct TableRow {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct TableRowProps;
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct TableRowSlots {
     pub default: Vec<Component>,
 }
@@ -504,6 +555,7 @@ crate::to_block_component!(TableRow);
 
 // TableCell # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct TableCell {
     pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -512,12 +564,14 @@ pub struct TableCell {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct TableCellProps {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub is_header: Option<bool>,
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct TableCellSlots {
     pub default: Vec<InlineComponent>,
 }
