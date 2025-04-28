@@ -250,7 +250,7 @@ pub enum ListStyle {
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 pub struct ListSlots {
-    pub default: Vec<ListItem>,
+    pub default: Vec<Component>,
 }
 
 crate::to_block_component!(List);
@@ -477,8 +477,8 @@ pub struct TableProps {
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 pub struct TableSlots {
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub header: Option<Vec<TableRow>>,
-    pub body: Vec<TableRow>,
+    pub header: Option<Vec<Component>>,
+    pub body: Vec<Component>,
 }
 
 crate::to_block_component!(Table);
@@ -497,7 +497,7 @@ pub struct TableRowProps;
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 pub struct TableRowSlots {
-    pub default: Vec<TableCell>,
+    pub default: Vec<Component>,
 }
 
 crate::to_block_component!(TableRow);
