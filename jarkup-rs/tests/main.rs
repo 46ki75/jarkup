@@ -1,7 +1,6 @@
 #[test]
 fn serialize() {
     let inline = jarkup_rs::InlineComponent::Text(jarkup_rs::Text {
-        inline: true,
         props: jarkup_rs::TextProps {
             text: "Hello, world!".to_string(),
             ..Default::default()
@@ -11,7 +10,6 @@ fn serialize() {
 
     let paragraph = jarkup_rs::Component::BlockComponent(jarkup_rs::BlockComponent::Paragraph(
         jarkup_rs::Paragraph {
-            inline: false,
             props: None,
             slots: jarkup_rs::ParagraphSlots {
                 default: vec![inline],

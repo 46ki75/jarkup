@@ -46,8 +46,6 @@ pub enum BlockComponent {
 #[serde(rename_all = "camelCase")]
 pub struct Text {
     /// Always `true`
-    pub inline: bool,
-
     pub props: TextProps,
     // Always `None`
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -104,8 +102,6 @@ crate::to_inline_component!(Text);
 #[serde(rename_all = "camelCase")]
 pub struct Icon {
     /// Always `true`
-    pub inline: bool,
-
     pub props: IconProps,
 
     // Always `None`
@@ -133,8 +129,6 @@ crate::to_inline_component!(Icon);
 #[serde(rename_all = "camelCase")]
 pub struct Heading {
     /// Always `false`
-    pub inline: bool,
-
     pub props: HeadingProps,
 
     pub slots: HeadingSlots,
@@ -201,7 +195,6 @@ crate::to_block_component!(Heading);
 #[serde(rename_all = "camelCase")]
 pub struct Paragraph {
     /// Always `false`
-    pub inline: bool,
 
     // Always `None`
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -226,7 +219,6 @@ crate::to_block_component!(Paragraph);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ListItem {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<ListItemProps>,
     pub slots: ListItemSlots,
@@ -248,7 +240,6 @@ crate::to_block_component!(ListItem);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct List {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<ListProps>,
     pub slots: ListSlots,
@@ -281,7 +272,6 @@ crate::to_block_component!(List);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct BlockQuote {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<BlockQuoteProps>,
     pub slots: BlockQuoteSlots,
@@ -306,7 +296,6 @@ crate::to_block_component!(BlockQuote);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Callout {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<CalloutProps>,
     pub slots: CalloutSlots,
@@ -342,7 +331,6 @@ crate::to_block_component!(Callout);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Divider {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<DividerProps>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -363,7 +351,6 @@ crate::to_block_component!(Divider);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Toggle {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<ToggleProps>,
     pub slots: ToggleSlots,
@@ -386,7 +373,6 @@ crate::to_block_component!(Toggle);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Bookmark {
-    pub inline: bool,
     pub props: BookmarkProps,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub slots: Option<BookmarkSlots>,
@@ -414,7 +400,6 @@ crate::to_block_component!(Bookmark);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct File {
-    pub inline: bool,
     pub props: FileProps,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub slots: Option<FileSlots>,
@@ -438,7 +423,6 @@ crate::to_block_component!(File);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Image {
-    pub inline: bool,
     pub props: ImageProps,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub slots: Option<ImageSlots>,
@@ -462,7 +446,6 @@ crate::to_block_component!(Image);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CodeBlock {
-    pub inline: bool,
     pub props: CodeBlockProps,
     pub slots: Option<CodeBlockSlots>,
 }
@@ -486,7 +469,6 @@ crate::to_block_component!(CodeBlock);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Katex {
-    pub inline: bool,
     pub props: KatexProps,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub slots: Option<KatexSlots>,
@@ -508,7 +490,6 @@ crate::to_block_component!(Katex);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Table {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<TableProps>,
     pub slots: TableSlots,
@@ -539,7 +520,6 @@ crate::to_block_component!(Table);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TableRow {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<TableRowProps>,
     pub slots: TableRowSlots,
@@ -561,7 +541,6 @@ crate::to_block_component!(TableRow);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TableCell {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<TableCellProps>,
     pub slots: TableCellSlots,
@@ -586,7 +565,6 @@ crate::to_block_component!(TableCell);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ColumnList {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<ColumnListProps>,
     pub slots: ColumnListSlots,
@@ -608,7 +586,6 @@ crate::to_block_component!(ColumnList);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Column {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<ColumnProps>,
     pub slots: ColumnSlots,
@@ -630,7 +607,6 @@ crate::to_block_component!(Column);
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Unsupported {
-    pub inline: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<UnsupportedProps>,
     pub slots: Option<UnsupportedSlots>,
