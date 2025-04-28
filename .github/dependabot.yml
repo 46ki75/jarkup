@@ -7,6 +7,20 @@ updates:
     target-branch: "main"
     labels:
       - "Terraform"
+      - "dependencies"
+    assignees:
+      - "46ki75"
+    reviewers:
+      - "46ki75"
+
+  - package-ecosystem: "cargo"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    target-branch: "main"
+    labels:
+      - "Rust"
+      - "dependencies"
     assignees:
       - "46ki75"
     reviewers:
