@@ -21,6 +21,9 @@ export type BlockComponentMap = {
   Table: Table;
   TableRow: TableRow;
   TableCell: TableCell;
+  ColumnList: ColumnList;
+  Column: Column;
+  Unsupported: Unsupported;
 };
 
 export type ComponentMap = InlineComponentMap & BlockComponentMap;
@@ -214,4 +217,22 @@ export interface TableCell extends BlockComponentBase<"TableCell"> {
   type: "TableCell";
   props?: { isHeader?: boolean };
   slots: { default: InlineComponent[] };
+}
+
+export interface ColumnList extends BlockComponentBase<"ColumnList"> {
+  type: "ColumnList";
+  props?: undefined;
+  slots: { default: Column[] };
+}
+
+export interface Column extends BlockComponentBase<"Column"> {
+  type: "Column";
+  props?: undefined;
+  slots: { default: Component[] };
+}
+
+export interface Unsupported extends BlockComponentBase<"Unsupported"> {
+  type: "Unsupported";
+  props?: { details: string };
+  slots?: undefined;
 }
