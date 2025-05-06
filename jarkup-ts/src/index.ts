@@ -78,6 +78,7 @@ export interface Text extends InlineComponentBase<"Text"> {
     strikethrough?: boolean;
     katex?: boolean;
     code?: boolean;
+    kbd?: boolean;
     ruby?: string;
     href?: string;
     favicon?: string;
