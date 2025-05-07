@@ -43,6 +43,7 @@ export interface ComponentBase<
   P = Record<any, any>
 > {
   type: T;
+  id?: string;
   props?: P;
   slots?: Record<string, ComponentBase | ComponentBase[]>;
 }
@@ -52,6 +53,7 @@ export interface InlineComponentBase<
   P = Record<any, any>
 > extends ComponentBase<T, P> {
   type: T;
+  id?: string;
   props?: P;
   slots?: undefined;
 }
@@ -61,6 +63,7 @@ export interface BlockComponentBase<
   P = Record<any, any>
 > extends ComponentBase<T, P> {
   type: T;
+  id?: string;
   props?: P;
   slots?: Record<string, Component | Component[]>;
 }
@@ -68,6 +71,7 @@ export interface BlockComponentBase<
 // Inline Components
 export interface Text extends InlineComponentBase<"Text"> {
   type: "Text";
+  id?: string;
   props: {
     text: string;
     color?: string;
@@ -88,6 +92,7 @@ export interface Text extends InlineComponentBase<"Text"> {
 
 export interface Icon extends InlineComponentBase<"Icon"> {
   type: "Icon";
+  id?: string;
   props: {
     src: string;
     alt?: string;
@@ -98,48 +103,56 @@ export interface Icon extends InlineComponentBase<"Icon"> {
 // Block Components
 export interface Heading extends BlockComponentBase<"Heading"> {
   type: "Heading";
+  id?: string;
   props: { level: 1 | 2 | 3 | 4 | 5 | 6 };
   slots: { default: InlineComponent[] };
 }
 
 export interface Paragraph extends BlockComponentBase<"Paragraph"> {
   type: "Paragraph";
+  id?: string;
   props?: undefined;
   slots: { default: InlineComponent[] };
 }
 
 export interface ListItem extends BlockComponentBase<"ListItem"> {
   type: "ListItem";
+  id?: string;
   props?: undefined;
   slots: { default: InlineComponent[] };
 }
 
 export interface List extends BlockComponentBase<"List"> {
   type: "List";
+  id?: string;
   props?: { listStyle?: "unordered" | "ordered" };
   slots: { default: ListItem[] };
 }
 
 export interface BlockQuote extends BlockComponentBase<"BlockQuote"> {
   type: "BlockQuote";
+  id?: string;
   props?: { cite?: string };
   slots: { default: Component[] };
 }
 
 export interface Callout extends BlockComponentBase<"Callout"> {
   type: "Callout";
+  id?: string;
   props?: { type?: "note" | "tip" | "important" | "warning" | "caution" };
   slots: { default: Component[] };
 }
 
 export interface Divider extends BlockComponentBase<"Divider"> {
   type: "Divider";
+  id?: string;
   props?: undefined;
   slots?: undefined;
 }
 
 export interface Toggle extends BlockComponentBase<"Toggle"> {
   type: "Toggle";
+  id?: string;
   props?: undefined;
   slots: {
     default: Component[];
@@ -149,6 +162,7 @@ export interface Toggle extends BlockComponentBase<"Toggle"> {
 
 export interface Bookmark extends BlockComponentBase<"Bookmark"> {
   type: "Bookmark";
+  id?: string;
   props: {
     url: string;
     title?: string;
@@ -160,6 +174,7 @@ export interface Bookmark extends BlockComponentBase<"Bookmark"> {
 
 export interface File extends BlockComponentBase<"File"> {
   type: "File";
+  id?: string;
   props: {
     src: string;
     name?: string;
@@ -169,6 +184,7 @@ export interface File extends BlockComponentBase<"File"> {
 
 export interface Image extends BlockComponentBase<"Image"> {
   type: "Image";
+  id?: string;
   props: {
     src: string;
     alt?: string;
@@ -178,6 +194,7 @@ export interface Image extends BlockComponentBase<"Image"> {
 
 export interface CodeBlock extends BlockComponentBase<"CodeBlock"> {
   type: "CodeBlock";
+  id?: string;
   props: {
     code: string;
     language: string;
@@ -189,6 +206,7 @@ export interface CodeBlock extends BlockComponentBase<"CodeBlock"> {
 
 export interface Katex extends BlockComponentBase<"Katex"> {
   type: "Katex";
+  id?: string;
   props: {
     expression: string;
   };
@@ -197,6 +215,7 @@ export interface Katex extends BlockComponentBase<"Katex"> {
 
 export interface Table extends BlockComponentBase<"Table"> {
   type: "Table";
+  id?: string;
   props?: {
     hasColumnHeader?: boolean;
     hasRowHeader?: boolean;
@@ -210,30 +229,35 @@ export interface Table extends BlockComponentBase<"Table"> {
 
 export interface TableRow extends BlockComponentBase<"TableRow"> {
   type: "TableRow";
+  id?: string;
   props?: undefined;
   slots: { default: TableCell[] };
 }
 
 export interface TableCell extends BlockComponentBase<"TableCell"> {
   type: "TableCell";
+  id?: string;
   props?: { isHeader?: boolean };
   slots: { default: InlineComponent[] };
 }
 
 export interface ColumnList extends BlockComponentBase<"ColumnList"> {
   type: "ColumnList";
+  id?: string;
   props?: undefined;
   slots: { default: Column[] };
 }
 
 export interface Column extends BlockComponentBase<"Column"> {
   type: "Column";
+  id?: string;
   props?: undefined;
   slots: { default: Component[] };
 }
 
 export interface Unsupported extends BlockComponentBase<"Unsupported"> {
   type: "Unsupported";
+  id?: string;
   props?: { details: string };
   slots?: undefined;
 }

@@ -11,6 +11,7 @@ fn serialize() {
     let paragraph = jarkup_rs::Component::BlockComponent(jarkup_rs::BlockComponent::Paragraph(
         jarkup_rs::Paragraph {
             props: None,
+            id: None,
             slots: jarkup_rs::ParagraphSlots {
                 default: vec![inline],
             },
