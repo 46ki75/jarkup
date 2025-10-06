@@ -18,6 +18,7 @@ export type BlockComponentMap = {
   Image: Image;
   CodeBlock: CodeBlock;
   Katex: Katex;
+  Mermaid: Mermaid;
   Table: Table;
   TableRow: TableRow;
   TableCell: TableCell;
@@ -209,6 +210,15 @@ export interface Katex extends BlockComponentBase<"Katex"> {
   id?: string;
   props: {
     expression: string;
+  };
+  slots?: undefined;
+}
+
+export interface Mermaid extends BlockComponentBase<"Mermaid"> {
+  type: "Mermaid";
+  id?: string;
+  props: {
+    code: string;
   };
   slots?: undefined;
 }

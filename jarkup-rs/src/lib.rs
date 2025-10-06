@@ -33,6 +33,7 @@ pub enum BlockComponent {
     Image(Image),
     CodeBlock(CodeBlock),
     Katex(Katex),
+    Mermaid(Mermaid),
     Table(Table),
     TableRow(TableRow),
     TableCell(TableCell),
@@ -78,6 +79,9 @@ pub struct TextProps {
 
     #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
     pub katex: Option<bool>,
+
+    #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
+    pub mermaid: Option<bool>,
 
     #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
     pub code: Option<bool>,
@@ -514,6 +518,29 @@ pub struct KatexProps {
 pub struct KatexSlots;
 
 crate::to_block_component!(Katex);
+
+// Mermaid # -------------------------------------------------- #
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct Mermaid {
+    pub id: Option<String>,
+
+    pub props: MermaidProps,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub slots: Option<MermaidSlots>,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct MermaidProps {
+    pub code: String,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct MermaidSlots;
+
+crate::to_block_component!(Mermaid);
 
 // Table # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
