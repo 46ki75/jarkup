@@ -81,9 +81,6 @@ pub struct TextProps {
     pub katex: Option<bool>,
 
     #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
-    pub mermaid: Option<bool>,
-
-    #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
     pub code: Option<bool>,
 
     #[serde(skip_serializing_if = "crate::skip_fn::option_false")]
