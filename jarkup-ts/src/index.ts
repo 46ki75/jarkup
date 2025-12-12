@@ -120,7 +120,7 @@ export interface ListItem extends BlockComponentBase<"ListItem"> {
   type: "ListItem";
   id?: string;
   props?: undefined;
-  slots: { default: InlineComponent[] };
+  slots: { default: Component[] };
 }
 
 export interface List extends BlockComponentBase<"List"> {

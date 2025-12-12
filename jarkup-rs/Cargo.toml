@@ -1,6 +1,6 @@
 [package]
 name = "jarkup-rs"
-version = "0.5.1"
+version = "0.6.0"
 edition = "2024"
 description = "A JSON-based intermediate markup language for component representation."
 authors = ["Chomolungma Shirayuki"]
