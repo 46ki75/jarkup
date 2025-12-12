@@ -241,7 +241,7 @@ pub struct ListItemProps;
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq, Eq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ListItemSlots {
-    pub default: Vec<InlineComponent>,
+    pub default: Vec<Component>,
 }
 
 crate::to_block_component!(ListItem);
