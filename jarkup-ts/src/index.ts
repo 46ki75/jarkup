@@ -41,7 +41,7 @@ export type Component = ComponentMap[keyof ComponentMap];
 // Base Interfaces
 export interface ComponentBase<
   T extends ComponentType = ComponentType,
-  P = Record<any, any>
+  P = Record<any, any>,
 > {
   type: T;
   id?: string;
@@ -51,7 +51,7 @@ export interface ComponentBase<
 
 export interface InlineComponentBase<
   T extends InlineComponentType = InlineComponentType,
-  P = Record<any, any>
+  P = Record<any, any>,
 > extends ComponentBase<T, P> {
   type: T;
   id?: string;
@@ -61,7 +61,7 @@ export interface InlineComponentBase<
 
 export interface BlockComponentBase<
   T extends BlockComponentType = BlockComponentType,
-  P = Record<any, any>
+  P = Record<any, any>,
 > extends ComponentBase<T, P> {
   type: T;
   id?: string;
@@ -261,7 +261,7 @@ export interface ColumnList extends BlockComponentBase<"ColumnList"> {
 export interface Column extends BlockComponentBase<"Column"> {
   type: "Column";
   id?: string;
-  props?: undefined;
+  props?: { widthRatio?: number };
   slots: { default: Component[] };
 }
 
