@@ -112,7 +112,10 @@ export interface Heading extends BlockComponentBase<"Heading"> {
 export interface Paragraph extends BlockComponentBase<"Paragraph"> {
   type: "Paragraph";
   id?: string;
-  props?: undefined;
+  props?: {
+    color?: string;
+    backgroundColor?: string;
+  };
   slots: { default: InlineComponent[] };
 }
 
