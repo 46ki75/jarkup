@@ -1,0 +1,1014 @@
+[
+  {
+    "type": "Paragraph",
+    "id": "30034608-d5c9-80d0-9be0-e9154c2b44a5",
+    "slots": {
+      "default": []
+    }
+  },
+  {
+    "type": "List",
+    "id": null,
+    "props": {
+      "listStyle": "ordered"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "ListItem",
+          "id": "30034608-d5c9-8061-b69a-cff96c289215",
+          "slots": {
+            "default": [
+              {
+                "type": "Text",
+                "id": null,
+                "props": {
+                  "text": "aa"
+                }
+              },
+              {
+                "type": "Text",
+                "id": null,
+                "props": {
+                  "text": "https://www.notion.so/46ki75/Block-Children-Retrieve-a-block-1c634608d5c98068a747fd40a35352a1?source=copy_link",
+                  "href": "https://www.notion.so/46ki75/Block-Children-Retrieve-a-block-1c634608d5c98068a747fd40a35352a1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "ListItem",
+          "id": "30034608-d5c9-80d9-8739-ffa3000ca53c",
+          "slots": {
+            "default": [
+              {
+                "type": "Text",
+                "id": null,
+                "props": {
+                  "text": "bb"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "30034608-d5c9-8085-b426-ddeda89f5b27",
+    "slots": {
+      "default": []
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1e334608-d5c9-801d-9e97-e44ea0451911",
+    "slots": {
+      "default": []
+    }
+  },
+  {
+    "type": "ColumnList",
+    "id": "30f34608-d5c9-80e1-8a1e-f2f773f29176",
+    "slots": {
+      "default": [
+        {
+          "type": "Column",
+          "id": "30f34608-d5c9-8053-a1af-f519f40b4d2a",
+          "props": {
+            "widthRatio": 0.375
+          },
+          "slots": {
+            "default": [
+              {
+                "type": "Image",
+                "id": "30f34608-d5c9-8061-9e9e-e3afc87580c1",
+                "props": {
+                  "src": "https://example.com/image1.png",
+                  "alt": ""
+                }
+              },
+              {
+                "type": "Paragraph",
+                "id": "30f34608-d5c9-8056-9ec9-dc8220f42049",
+                "slots": {
+                  "default": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "Column",
+          "id": "30f34608-d5c9-80da-91db-f942e1fcfefd",
+          "props": {
+            "widthRatio": 0.625
+          },
+          "slots": {
+            "default": [
+              {
+                "type": "CodeBlock",
+                "id": "30f34608-d5c9-80bd-a387-c6481c726486",
+                "props": {
+                  "code": "{\n  \"type\": \"mention\",\n  \"mention\": {\n    \"type\": \"custom_emoji\",\n    \"custom_emoji\": {\n      \"id\": \"18734608-d5c9-80bc-b40d-007a971aaa7f\",\n      \"name\": \"rust-lang\",\n      \"url\": \"https://s3-us-west-2.amazonaws.com/public.notion-static.com/17e20a36-60c1-406a-ad37-61afa93a4d83/rust-logo-256x256.png\"\n    }\n  },\n  \"annotations\": {\n    \"bold\": false,\n    \"italic\": false,\n    \"strikethrough\": false,\n    \"underline\": false,\n    \"code\": false,\n    \"color\": \"default\"\n  },\n  \"plain_text\": \":rust-lang:\",\n  \"href\": null\n}",
+                  "language": "json"
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "type": "Text",
+                      "id": null,
+                      "props": {
+                        "text": "Caption"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "ColumnList",
+    "id": "31234608-d5c9-8029-b7c8-fa2ad04fb879",
+    "slots": {
+      "default": [
+        {
+          "type": "Column",
+          "id": "31234608-d5c9-80f4-9fe1-da099913ff78",
+          "props": {
+            "widthRatio": 0.5
+          },
+          "slots": {
+            "default": [
+              {
+                "type": "Image",
+                "id": "31234608-d5c9-8061-a78d-d7765da70867",
+                "props": {
+                  "src": "https://example.com/image2.png",
+                  "alt": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "Column",
+          "id": "31234608-d5c9-8047-b3d6-e50068a881eb",
+          "props": {
+            "widthRatio": 0.5
+          },
+          "slots": {
+            "default": [
+              {
+                "type": "Image",
+                "id": "31234608-d5c9-80ec-8356-d0e21fa0353b",
+                "props": {
+                  "src": "https://example.com/image3.png",
+                  "alt": ""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Toggle",
+    "id": "1e334608-d5c9-80ae-b645-ffd729e68628",
+    "slots": {
+      "default": [
+        {
+          "type": "Table",
+          "id": "1e334608-d5c9-8036-9284-f97ec7a9e742",
+          "props": {
+            "hasColumnHeader": true,
+            "hasRowHeader": false
+          },
+          "slots": {
+            "header": [
+              {
+                "type": "TableRow",
+                "id": "1e334608-d5c9-802d-978d-d5196548eaf8",
+                "slots": {
+                  "default": [
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": "処理"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": " Rust"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": " JavaScript"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "body": [
+              {
+                "type": "TableRow",
+                "id": "1e334608-d5c9-8049-8d0c-f12b4fa9b76f",
+                "slots": {
+                  "default": [
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": "要素の1つでもtrueの時にtrueを返す"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": "any()",
+                              "code": true
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": "some()",
+                              "code": true
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TableRow",
+                "id": "1e334608-d5c9-80a8-b8d6-dd5e2e4910e3",
+                "slots": {
+                  "default": [
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": "要素のすべてがtrueの時にtrueを返す"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": "all()",
+                              "code": true
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": "every()",
+                              "code": true
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TableRow",
+                "id": "1e334608-d5c9-80f0-b34a-c61b56581ce9",
+                "slots": {
+                  "default": [
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": "要素の返り値がtrueのもののみ残す"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": "filter()",
+                              "code": true
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TableCell",
+                      "id": null,
+                      "slots": {
+                        "default": [
+                          {
+                            "type": "Text",
+                            "id": null,
+                            "props": {
+                              "text": "filter()",
+                              "code": true
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "Paragraph",
+          "id": "1e334608-d5c9-806d-ba0e-e6fadd500104",
+          "slots": {
+            "default": []
+          }
+        }
+      ],
+      "summary": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "イテレーション"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Heading",
+    "id": "1e334608-d5c9-8035-81e6-cefce3bc37b1",
+    "props": {
+      "level": 2
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "モナド"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Table",
+    "id": "1e334608-d5c9-802c-b380-f067a48aa677",
+    "props": {
+      "hasColumnHeader": true,
+      "hasRowHeader": false
+    },
+    "slots": {
+      "header": [
+        {
+          "type": "TableRow",
+          "id": "1e334608-d5c9-80f0-9353-d479b9fb7990",
+          "slots": {
+            "default": [
+              {
+                "type": "TableCell",
+                "id": null,
+                "slots": {
+                  "default": [
+                    {
+                      "type": "Text",
+                      "id": null,
+                      "props": {
+                        "text": "処理"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TableCell",
+                "id": null,
+                "slots": {
+                  "default": [
+                    {
+                      "type": "Text",
+                      "id": null,
+                      "props": {
+                        "text": " Rust"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TableCell",
+                "id": null,
+                "slots": {
+                  "default": [
+                    {
+                      "type": "Text",
+                      "id": null,
+                      "props": {
+                        "text": " Haskell"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "body": [
+        {
+          "type": "TableRow",
+          "id": "1e334608-d5c9-80c6-a015-f81643e5675a",
+          "slots": {
+            "default": [
+              {
+                "type": "TableCell",
+                "id": null,
+                "slots": {
+                  "default": [
+                    {
+                      "type": "Text",
+                      "id": null,
+                      "props": {
+                        "text": "モナド的な結合 (bind)"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TableCell",
+                "id": null,
+                "slots": {
+                  "default": [
+                    {
+                      "type": "Text",
+                      "id": null,
+                      "props": {
+                        "text": "and_then()",
+                        "code": true
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TableCell",
+                "id": null,
+                "slots": {
+                  "default": [
+                    {
+                      "type": "Text",
+                      "id": null,
+                      "props": {
+                        "text": ">>=",
+                        "code": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "TableRow",
+          "id": "1e334608-d5c9-80c1-8ef7-d2dd9008bd18",
+          "slots": {
+            "default": [
+              {
+                "type": "TableCell",
+                "id": null,
+                "slots": {
+                  "default": [
+                    {
+                      "type": "Text",
+                      "id": null,
+                      "props": {
+                        "text": "コンテナ内の値に関数適用"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TableCell",
+                "id": null,
+                "slots": {
+                  "default": [
+                    {
+                      "type": "Text",
+                      "id": null,
+                      "props": {
+                        "text": "map()",
+                        "code": true
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TableCell",
+                "id": null,
+                "slots": {
+                  "default": [
+                    {
+                      "type": "Text",
+                      "id": null,
+                      "props": {
+                        "text": "fmap",
+                        "code": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1e334608-d5c9-809c-9fce-f29fdfc219e1",
+    "slots": {
+      "default": []
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1e134608-d5c9-807d-b39b-e14f7d95856c",
+    "slots": {
+      "default": []
+    }
+  },
+  {
+    "type": "Unsupported",
+    "id": null,
+    "props": {
+      "details": "Notion: `Unsupported Block` is not supported."
+    },
+    "slots": null
+  },
+  {
+    "type": "Paragraph",
+    "id": "1d634608-d5c9-8010-9b30-debdd0ed42f5",
+    "slots": {
+      "default": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": " "
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1c634608-d5c9-8066-8d7e-d72a90fc5029",
+    "slots": {
+      "default": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "このページのページIDは "
+          }
+        },
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "1c634608d5c98068a747fd40a35352a1",
+            "code": true
+          }
+        },
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": " です。"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1c634608-d5c9-801a-89ae-eb18ae9d245c",
+    "slots": {
+      "default": []
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1c834608-d5c9-8039-801a-e117185f54c2",
+    "slots": {
+      "default": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "日付メンション "
+          }
+        },
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": " "
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1c834608-d5c9-80c1-bd7b-c6617c7fafcb",
+    "slots": {
+      "default": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "今日の日付メンション "
+          }
+        },
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": " "
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1e334608-d5c9-808b-973b-d4dd4079b9ad",
+    "slots": {
+      "default": []
+    }
+  },
+  {
+    "type": "List",
+    "id": null,
+    "props": {
+      "listStyle": "unordered"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "ListItem",
+          "id": "1e334608-d5c9-8099-a367-dd8457af3bc5",
+          "slots": {
+            "default": [
+              {
+                "type": "Text",
+                "id": null,
+                "props": {
+                  "text": "List 1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "ListItem",
+          "id": "1e334608-d5c9-80e7-a72b-da148cc69ce4",
+          "slots": {
+            "default": [
+              {
+                "type": "Text",
+                "id": null,
+                "props": {
+                  "text": "List 2"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "ListItem",
+          "id": "1e334608-d5c9-801d-80e9-c10f08b19682",
+          "slots": {
+            "default": [
+              {
+                "type": "Text",
+                "id": null,
+                "props": {
+                  "text": "List 3"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "ListItem",
+          "id": "1e334608-d5c9-806b-94c6-e863ddb509a9",
+          "slots": {
+            "default": [
+              {
+                "type": "Text",
+                "id": null,
+                "props": {
+                  "text": "List 4"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1c634608-d5c9-808e-b610-e9f3cadd1e34",
+    "slots": {
+      "default": []
+    }
+  },
+  {
+    "type": "Heading",
+    "id": "1c634608-d5c9-80e5-9947-eb4b8567399e",
+    "props": {
+      "level": 2
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "インライン絵文字"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1c634608-d5c9-8064-bf9e-ecae1a80c9b4",
+    "slots": {
+      "default": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "インライン絵文字→ "
+          }
+        },
+        {
+          "type": "Icon",
+          "id": "18734608-d5c9-80bc-b40d-007a971aaa7f",
+          "props": {
+            "src": "https://s3-us-west-2.amazonaws.com/public.notion-static.com/ed242510-b5e2-4fcd-9e18-67b957117ecd/fa7-brands--rust.svg",
+            "alt": "rust-lang"
+          }
+        },
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": " ←インライン絵文字"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1c634608-d5c9-8026-8057-c96a4ef253a2",
+    "slots": {
+      "default": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "どうやらインライン絵文字は "
+          }
+        },
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "mention",
+            "code": true
+          }
+        },
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": " で表示されるようですね。"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "CodeBlock",
+    "id": "1c634608-d5c9-80a9-b141-f91e2b350a89",
+    "props": {
+      "code": "{\n  \"type\": \"mention\",\n  \"mention\": {\n    \"type\": \"custom_emoji\",\n    \"custom_emoji\": {\n      \"id\": \"18734608-d5c9-80bc-b40d-007a971aaa7f\",\n      \"name\": \"rust-lang\",\n      \"url\": \"https://s3-us-west-2.amazonaws.com/public.notion-static.com/17e20a36-60c1-406a-ad37-61afa93a4d83/rust-logo-256x256.png\"\n    }\n  },\n  \"annotations\": {\n    \"bold\": false,\n    \"italic\": false,\n    \"strikethrough\": false,\n    \"underline\": false,\n    \"code\": false,\n    \"color\": \"default\"\n  },\n  \"plain_text\": \":rust-lang:\",\n  \"href\": null\n}",
+      "language": "json"
+    },
+    "slots": {
+      "default": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "Caption"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1c634608-d5c9-8025-8c5d-d65571da26f2",
+    "slots": {
+      "default": []
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1c634608-d5c9-806a-b5a3-c417a0d730f4",
+    "slots": {
+      "default": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "KaTeX expression: "
+          }
+        },
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "x = \\frac{ -b \\pm \\sqrt{b^2 - 4ac} }{2a}",
+            "katex": true
+          }
+        },
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": "."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "30034608-d5c9-8060-8a5e-c7ed4e186ec5",
+    "slots": {
+      "default": []
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "1c834608-d5c9-8036-8690-c703c407c772",
+    "slots": {
+      "default": [
+        {
+          "type": "Text",
+          "id": null,
+          "props": {
+            "text": " It’s time"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "Paragraph",
+    "id": "30f34608-d5c9-804b-94b7-c248fbf96b13",
+    "slots": {
+      "default": []
+    }
+  },
+  {
+    "type": "Unsupported",
+    "id": null,
+    "props": {
+      "details": "Notion: `Embed Block` is not supported."
+    },
+    "slots": null
+  },
+  {
+    "type": "Paragraph",
+    "id": "30f34608-d5c9-800c-a228-e4128e9de33b",
+    "slots": {
+      "default": []
+    }
+  }
+]
