@@ -1,6 +1,8 @@
 mod r#macro;
 mod skip_fn;
 
+use std::ops::{Add, AddAssign};
+
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
@@ -40,6 +42,158 @@ pub enum BlockComponent {
     ColumnList(ColumnList),
     Column(Column),
     Unsupported(Unsupported),
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
+pub struct Assets {
+    pub icons: Vec<String>,
+    pub files: Vec<String>,
+    pub images: Vec<String>,
+}
+
+impl AddAssign for Assets {
+    fn add_assign(&mut self, rhs: Self) {
+        self.icons.extend(rhs.icons);
+        self.files.extend(rhs.files);
+        self.images.extend(rhs.images);
+    }
+}
+
+impl Add for Assets {
+    type Output = Self;
+
+    fn add(mut self, rhs: Self) -> Self::Output {
+        self += rhs;
+        self
+    }
+}
+
+impl Component {
+    pub fn extract_assets(self) -> Assets {
+        let empty_assets = Assets::default();
+        self.extract_assets_recursive(empty_assets)
+    }
+
+    fn extract_assets_recursive(self, mut assets: Assets) -> Assets {
+        match self {
+            Component::InlineComponent(inline_component) => match inline_component {
+                InlineComponent::Icon(icon) => {
+                    assets.icons.push(icon.props.src);
+                }
+                _ => {}
+            },
+            Component::BlockComponent(block_component) => match block_component {
+                BlockComponent::File(file) => {
+                    assets.files.push(file.props.src);
+                }
+                BlockComponent::Image(image) => {
+                    assets.images.push(image.props.src);
+                }
+                BlockComponent::Heading(heading) => {
+                    for child in heading.slots.default {
+                        assets = Component::InlineComponent(child).extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::Paragraph(paragraph) => {
+                    for child in paragraph.slots.default {
+                        assets = Component::InlineComponent(child).extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::ListItem(list_item) => {
+                    for child in list_item.slots.default {
+                        assets = child.extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::List(list) => {
+                    for child in list.slots.default {
+                        assets = child.extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::BlockQuote(block_quote) => {
+                    for child in block_quote.slots.default {
+                        assets = child.extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::Callout(callout) => {
+                    for child in callout.slots.default {
+                        assets = child.extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::Toggle(toggle) => {
+                    for child in toggle.slots.summary {
+                        assets = Component::InlineComponent(child).extract_assets_recursive(assets);
+                    }
+                    for child in toggle.slots.default {
+                        assets = child.extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::CodeBlock(code_block) => {
+                    if let Some(slots) = code_block.slots {
+                        for child in slots.default {
+                            assets =
+                                Component::InlineComponent(child).extract_assets_recursive(assets);
+                        }
+                    }
+                }
+                BlockComponent::Table(table) => {
+                    if let Some(header) = table.slots.header {
+                        for child in header {
+                            assets = child.extract_assets_recursive(assets);
+                        }
+                    }
+                    for child in table.slots.body {
+                        assets = child.extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::TableRow(table_row) => {
+                    for child in table_row.slots.default {
+                        assets = child.extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::TableCell(table_cell) => {
+                    for child in table_cell.slots.default {
+                        assets = Component::InlineComponent(child).extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::ColumnList(column_list) => {
+                    for child in column_list.slots.default {
+                        assets = child.extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::Column(column) => {
+                    for child in column.slots.default {
+                        assets = child.extract_assets_recursive(assets);
+                    }
+                }
+                _ => {}
+            },
+        }
+        assets
+    }
+}
+
+#[cfg(test)]
+mod tests {
+
+    use super::{Assets, Component};
+
+    #[test]
+    fn test_extract_assets() {
+        let slice = include_bytes!("./jarkup.json");
+        let components = serde_json::from_slice::<Vec<Component>>(slice).unwrap();
+        let assets = components
+            .into_iter()
+            .map(|component| component.extract_assets())
+            .collect::<Vec<_>>();
+
+        let mut merged_assets = Assets::default();
+
+        for asset in assets {
+            merged_assets += asset;
+        }
+
+        println!("{:#?}", merged_assets);
+    }
 }
 
 // Text # -------------------------------------------------- #
@@ -212,7 +366,13 @@ pub struct Paragraph {
 
 #[derive(Debug, Deserialize, Serialize, Clone, Default)]
 #[serde(rename_all = "camelCase")]
-pub struct ParagraphProps;
+pub struct ParagraphProps {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub background_color: Option<String>,
+}
 
 #[derive(Debug, Deserialize, Serialize, Clone, Default)]
 #[serde(rename_all = "camelCase")]
