@@ -192,6 +192,8 @@ export interface Image extends BlockComponentBase<"Image"> {
   props: {
     src: string;
     alt?: string;
+    width?: number;
+    height?: number;
   };
   slots?: undefined;
 }
