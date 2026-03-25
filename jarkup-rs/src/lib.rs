@@ -623,7 +623,7 @@ pub struct ImageProps {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub width: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub height: Option<u16>,
+    pub height: Option<u32>,
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, Default)]
