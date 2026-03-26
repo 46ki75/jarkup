@@ -22,6 +22,7 @@ pub enum InlineComponent {
 #[derive(Debug, Deserialize, Serialize, Clone)]
 #[serde(tag = "type")]
 pub enum BlockComponent {
+    Fragment(Fragment),
     Heading(Heading),
     Paragraph(Paragraph),
     ListItem(ListItem),
@@ -90,6 +91,11 @@ impl Component {
                 }
                 BlockComponent::Image(image) => {
                     assets.images.push(image.props.src);
+                }
+                BlockComponent::Fragment(fragment) => {
+                    for child in fragment.slots.default {
+                        assets = child.extract_assets_recursive(assets);
+                    }
                 }
                 BlockComponent::Heading(heading) => {
                     for child in heading.slots.default {
@@ -299,6 +305,28 @@ pub struct IconSlots;
 
 crate::to_inline_component!(Icon);
 
+// Fragment # -------------------------------------------------- #
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct Fragment {
+    pub id: Option<String>,
+
+    /// Always `false`
+    pub props: FragmentProps,
+
+    pub slots: FragmentSlots,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct FragmentProps;
+
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct FragmentSlots {
+    pub default: Vec<Component>,
+}
+
 // Heading # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, Default)]
 #[serde(rename_all = "camelCase")]
@@ -393,9 +421,6 @@ pub struct ParagraphProps {
 #[serde(rename_all = "camelCase")]
 pub struct ParagraphSlots {
     pub default: Vec<InlineComponent>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub children: Option<Vec<Component>>,
 }
 
 crate::to_block_component!(Paragraph);

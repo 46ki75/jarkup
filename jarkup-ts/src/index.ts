@@ -5,6 +5,7 @@ export type InlineComponentMap = {
 };
 
 export type BlockComponentMap = {
+  Fragment: Fragment;
   Heading: Heading;
   Paragraph: Paragraph;
   ListItem: ListItem;
@@ -104,6 +105,13 @@ export interface Icon extends InlineComponentBase<"Icon"> {
 }
 
 // Block Components
+export interface Fragment extends BlockComponentBase<"Fragment"> {
+  type: "Fragment";
+  id?: string;
+  props?: undefined;
+  slots: { default: Component[] };
+}
+
 export interface Heading extends BlockComponentBase<"Heading"> {
   type: "Heading";
   id?: string;
@@ -118,7 +126,7 @@ export interface Paragraph extends BlockComponentBase<"Paragraph"> {
     color?: string;
     backgroundColor?: string;
   };
-  slots: { default: InlineComponent[]; children?: Component[] };
+  slots: { default: InlineComponent[] };
 }
 
 export interface ListItem extends BlockComponentBase<"ListItem"> {
