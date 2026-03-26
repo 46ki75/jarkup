@@ -19,6 +19,8 @@ export type BlockComponentMap = {
   CodeBlock: CodeBlock;
   Katex: Katex;
   Mermaid: Mermaid;
+  Tab: Tab;
+  Tabs: Tabs;
   Table: Table;
   TableRow: TableRow;
   TableCell: TableCell;
@@ -226,6 +228,20 @@ export interface Mermaid extends BlockComponentBase<"Mermaid"> {
     code: string;
   };
   slots?: undefined;
+}
+
+export interface Tab extends BlockComponentBase<"Tab"> {
+  type: "Tab";
+  id?: string;
+  props: { title: string };
+  slots: { labels: InlineComponent[]; contents: Component[] };
+}
+
+export interface Tabs extends BlockComponentBase<"Tabs"> {
+  type: "Tabs";
+  id?: string;
+  props?: { widthRatio?: number };
+  slots: { default: Tab[] };
 }
 
 export interface Table extends BlockComponentBase<"Table"> {

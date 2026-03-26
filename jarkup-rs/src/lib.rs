@@ -36,6 +36,8 @@ pub enum BlockComponent {
     CodeBlock(CodeBlock),
     Katex(Katex),
     Mermaid(Mermaid),
+    Tab(Tab),
+    Tabs(Tabs),
     Table(Table),
     TableRow(TableRow),
     TableCell(TableCell),
@@ -133,6 +135,19 @@ impl Component {
                             assets =
                                 Component::InlineComponent(child).extract_assets_recursive(assets);
                         }
+                    }
+                }
+                BlockComponent::Tab(tab) => {
+                    for child in tab.slots.labels {
+                        assets = Component::InlineComponent(child).extract_assets_recursive(assets);
+                    }
+                    for child in tab.slots.contents {
+                        assets = child.extract_assets_recursive(assets);
+                    }
+                }
+                BlockComponent::Tabs(tabs) => {
+                    for child in tabs.slots.default {
+                        assets = child.extract_assets_recursive(assets);
                     }
                 }
                 BlockComponent::Table(table) => {
@@ -702,6 +717,51 @@ pub struct MermaidProps {
 pub struct MermaidSlots;
 
 crate::to_block_component!(Mermaid);
+
+// Tab # -------------------------------------------------- #
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct Tab {
+    pub id: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub props: Option<TabProps>,
+    pub slots: TabSlots,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct TabProps {
+    pub title: Option<String>,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct TabSlots {
+    pub labels: Vec<InlineComponent>,
+    pub contents: Vec<Component>,
+}
+
+// Tabs # -------------------------------------------------- #
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct Tabs {
+    pub id: Option<String>,
+    pub props: Option<TabsProps>,
+    pub slots: TabsSlots,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct TabsProps {
+    pub title: Option<String>,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct TabsSlots {
+    pub default: Vec<Component>,
+}
 
 // Table # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, Default)]
