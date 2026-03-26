@@ -742,6 +742,8 @@ pub struct TabSlots {
     pub contents: Vec<Component>,
 }
 
+crate::to_block_component!(Tab);
+
 // Tabs # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, Default)]
 #[serde(rename_all = "camelCase")]
@@ -762,6 +764,8 @@ pub struct TabsProps {
 pub struct TabsSlots {
     pub default: Vec<Component>,
 }
+
+crate::to_block_component!(Tabs);
 
 // Table # -------------------------------------------------- #
 #[derive(Debug, Deserialize, Serialize, Clone, Default)]
