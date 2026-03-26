@@ -118,7 +118,7 @@ export interface Paragraph extends BlockComponentBase<"Paragraph"> {
     color?: string;
     backgroundColor?: string;
   };
-  slots: { default: InlineComponent[] };
+  slots: { default: InlineComponent[]; children?: Component[] };
 }
 
 export interface ListItem extends BlockComponentBase<"ListItem"> {

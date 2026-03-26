@@ -14,6 +14,7 @@ fn serialize() {
             id: None,
             slots: jarkup_rs::ParagraphSlots {
                 default: vec![inline],
+                ..Default::default()
             },
         },
     ));
