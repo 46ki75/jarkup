@@ -393,6 +393,9 @@ pub struct ParagraphProps {
 #[serde(rename_all = "camelCase")]
 pub struct ParagraphSlots {
     pub default: Vec<InlineComponent>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub children: Option<Vec<Component>>,
 }
 
 crate::to_block_component!(Paragraph);
