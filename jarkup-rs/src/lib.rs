@@ -311,8 +311,8 @@ crate::to_inline_component!(Icon);
 pub struct Fragment {
     pub id: Option<String>,
 
-    /// Always `false`
-    pub props: FragmentProps,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub props: Option<FragmentProps>,
 
     pub slots: FragmentSlots,
 }
