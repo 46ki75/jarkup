@@ -667,6 +667,10 @@ pub struct ImageProps {
     pub width: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub height: Option<u32>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub srcset: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sizes: Option<String>,
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, Default)]
