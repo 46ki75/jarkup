@@ -206,6 +206,7 @@ export interface Image extends BlockComponentBase<"Image"> {
     height?: number;
     srcset?: string;
     sizes?: string;
+    mimeType?: string;
   };
   slots?: undefined;
 }
